@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "59875f23-886f-4430-b097-edab60997d7d",
+		"name": "Expense Sharing APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "CREATE NEW USER API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"tanmay@gmail.com\",\n    \"fname\": \"Tanmay\",\n    \"lname\": \"Soni\",\n    \"mobile\": \"8788988878\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/user/createuser",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"createuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE NEW GROUP API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"gname\":\"Group of Ajay, Vijay, Sanjay, Tanmay\",\n    \"members\": [\"620fe4f69939e9e4cd8d528a\",\"620fe5049939e9e4cd8d528c\",\"620fe5159939e9e4cd8d528e\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/group/creategroup/620fe487d21329783f6a7a19",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"group",
+						"creategroup",
+						"620fe487d21329783f6a7a19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SPLIT BILL API",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"gid\": \"620fe5779939e9e4cd8d5291\",\n    \"expenseType\":\"PERCENT\",\n    \"paidBy\":\"620fe487d21329783f6a7a19\",\n    \"amount\":1600,\n    \"sharedBy\":[\"620fe4f69939e9e4cd8d528a\", \"620fe5049939e9e4cd8d528c\",\"620fe5159939e9e4cd8d528e\"],\n    \"sharingStructure\":{\n        \"620fe4f69939e9e4cd8d528a\":40,\n        \"620fe5049939e9e4cd8d528c\":30,\n        \"620fe5159939e9e4cd8d528e\": 30\n    }\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/splitbill",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"splitbill"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FETCH USER API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/user/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FETCH GROUP API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/group/",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"group",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DISPLAY EXPENSE API",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3000/displayexpense/620fe5779939e9e4cd8d5291",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"displayexpense",
+						"620fe5779939e9e4cd8d5291"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
